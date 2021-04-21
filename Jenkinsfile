@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+		 bat 'start https://github.com/icedwizz/Jenkins_CEVA/readme.txt'
 				
 				
             }
