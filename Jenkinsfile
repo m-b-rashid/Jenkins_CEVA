@@ -5,7 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		 bat 'start https://github.com/icedwizz/Jenkins_CEVA/readme.txt'
+		def excelFormat = CSVFormat.EXCEL
+		def records = readCSV file: 'users.csv', format: excelFormat
+		assert records[0][0] == 'key'
+		assert records[1][1] == 'b'
+
+		def content = readCSV text: 'key,value\na,b', format: CSVFormat.DEFAULT.withHeader()
+		assert records[1].get('key') == 'a'
+		assert records[1].get('value') == 'b'
 				
 				
             }
