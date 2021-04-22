@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
 		    script {
-		readCSV("dev/roles.csv")
+		def csvFilePath = “dev\roles.csv”
 		    }
             }
         }
