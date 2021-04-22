@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                
 		def excelFormat = CSVFormat.EXCEL
 		def records = readCSV file: 'dir/roles.csv', format: excelFormat
 		assert records[0][0] == 'key'
