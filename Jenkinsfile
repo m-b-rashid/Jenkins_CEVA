@@ -7,7 +7,7 @@ pipeline {
 		    checkout scm
 		    script {
 			
-			bat "C:\\cygwin64\bin\\bash.exe"
+			bat "dir C:\\cygwin64\\bin\\bash.exe"
 			sh 'ls..' 
 		    }
 		    
