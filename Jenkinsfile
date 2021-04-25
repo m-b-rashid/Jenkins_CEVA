@@ -4,10 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+		    checkout scm
 		    script {
-			checkout scm
-			bat "C:\cygwin64\bin\bash.exe"
-			sh("ls") 
+			
+			bat "C:\\cygwin64\bin\\bash.exe"
+			sh 'ls..' 
 		    }
 		    
             }
