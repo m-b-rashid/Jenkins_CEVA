@@ -31,11 +31,14 @@ pipeline {
 		 }	
 	  }
 	    stage('Test') {
+		    steps{
 		    echo 'Testing...'
-		    
+		    }
 	    }
 	    stage('Release') {
+		    steps {
 		    echo 'Relase to QA'
+		    }
 		    
 		    
 	    }
