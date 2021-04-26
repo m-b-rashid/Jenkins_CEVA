@@ -18,15 +18,15 @@ pipeline {
 			   }	
 		    
        			       }
-        stage('Get-Users') {
-             	echo 'Getting Users..'
-		    script {
-			    def roles = readFile("${WORKSPACE}/roles.csv").each { line ->
-   			    line.each { field ->
-			    echo("roles")
-			   }
+        //stage('Get-Users') {
+        //     	echo 'Getting Users..'
+	//	    script {
+	//		    def roles = readFile("${WORKSPACE}/roles.csv").each { line ->
+   	//		    line.each { field ->
+	//		    echo("roles")
+	//		   }
       
-       			 }
+       			 
     }
 }
 	    
