@@ -12,12 +12,14 @@ pipeline {
 	 stage('Get-Images') {
 		 steps{
 		  echo 'Getting images..' 
-		  sh curl -X GET http://localhost:8088/semarchy/api/rest/admin/image-libraries/ -u semadmin:semadmin
+			 script{
+		  		sh ("curl -X GET http://localhost:8088/semarchy/api/rest/admin/image-libraries/ -u semadmin:semadmin")
 		  		//sh("curl -s -k -X GET –header Content-Type: application/json’ \
         	  		  //–header ‘Accept:application/json’  \
 		  		  //-header Authorization: Basic c2VtYWRtaW46c2VtYWRtaW4= \
 		   		  //http://83.137.230.170/semarchy/api/rest/admin/image-libraries/")
-			   }	
+			 }
+		 	}	
 		 }
        			       
         //stage('Get-Users') {
