@@ -23,13 +23,14 @@ pipeline {
 	//	 }
        			       
         stage('Get-Users') {
+		steps{
              	echo 'Getting Users..'
 		    script {
 			    def roles = readFile("${WORKSPACE}/roles.csv").each { line ->
    			    line.each { field ->
 			    echo(roles)
 			   }
-      
+			    }
 			 }
     }
 }
