@@ -11,9 +11,9 @@ pipeline {
 	    
 	
        			       
-        stage('Get-Users') {
+        stage('Get-Roles') {
 		steps{
-             	echo 'Getting Users..'
+             	echo 'Getting Roles..'
 		script {
 			 def roles = readFile("${WORKSPACE}/roles.csv")
 			 echo(roles)
@@ -25,14 +25,19 @@ pipeline {
 		 steps{
 		  echo 'Getting images..' 
 			 script{
-		  		sh 'curl -X GET http://localhost:8088/semarchy/api/rest/admin/image-libraries/ -u semadmin:semadmin'
-		  		//sh("curl -s -k -X GET –header Content-Type: application/json’ \
-        	  		  //–header ‘Accept:application/json’  \
-		  		  //-header Authorization: Basic c2VtYWRtaW46c2VtYWRtaW4= \
-		   		  //http://83.137.230.170/semarchy/api/rest/admin/image-libraries/")
+				 def images = readFile("${WORKSPACE}/images.png")
+				 echo(images)
 			 }
-		 	}	
+		 }	
 	  }
+	    stage('Test') {
+		    
+		    
+	    }
+	    stage('Release') {
+		    
+		    
+	    }
     }
 }
 	    
