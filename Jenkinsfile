@@ -17,7 +17,7 @@ pipeline {
 		   		  //http://83.137.230.170/semarchy/api/rest/admin/image-libraries/")
 			   }	
 		    
-        }
+       			       }
         stage('Get-Users') {
             
                 echo 'Getting Users..'
@@ -25,11 +25,9 @@ pipeline {
 			    def roles = readFile("${WORKSPACE}/roles.csv").each { line ->
    			    line.each { field ->
 			    echo("roles")
-		
-            
-			    
-        }
+			   }
       
-        }
+       			 }
     }
 }
+    }
