@@ -7,7 +7,7 @@ pipeline {
 		checkout scm
 	}
 	    
-	    stage('Get-Images') {
+	 stage('Get-Images') {
 		  echo 'Getting images..'  
 		    script {
 		  		sh("curl -X GET http://localhost:8088/semarchy/api/rest/admin/image-libraries/ -u semadmin:semadmin")
@@ -19,8 +19,7 @@ pipeline {
 		    
        			       }
         stage('Get-Users') {
-            
-                echo 'Getting Users..'
+             	echo 'Getting Users..'
 		    script {
 			    def roles = readFile("${WORKSPACE}/roles.csv").each { line ->
    			    line.each { field ->
@@ -30,4 +29,5 @@ pipeline {
        			 }
     }
 }
+	    
     
