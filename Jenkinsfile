@@ -37,7 +37,7 @@ pipeline {
 	    }
 	    stage('Release') {
 		    steps {
-			    //sh build file
+			    sh ("${WORKSPACE}/devRelease.sh)
 		    echo 'Relase to QA'
 		    }
 		    
