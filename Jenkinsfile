@@ -26,7 +26,7 @@ pipeline {
 		  echo 'Getting images..' 
 			 script{
 				 def images = readFile("${WORKSPACE}/about-dialog-logo.png")
-				 echo(images)
+				 //echo(images)
 			 }
 		 }	
 	  }
@@ -37,6 +37,7 @@ pipeline {
 	    }
 	    stage('Release') {
 		    steps {
+			    //sh build file
 		    echo 'Relase to QA'
 		    }
 		    
