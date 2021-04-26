@@ -10,11 +10,11 @@ pipeline {
 	    stage('Get-Images') {
 		  echo 'Getting images..'  
 		    script {
-		  		bat "dir C:\\cygwin64\\bin\\bash.exe"
-		  		sh curl -s -k -X GET –header Content-Type: application/json’ \
-        	  		  –header ‘Accept:application/json’  \
-		  		  -header Authorization: Basic c2VtYWRtaW46c2VtYWRtaW4= \
-		   		  http://localhost:8088/semarchy/api/rest/admin/image-libraries/
+		  		sh("curl -X GET http://83.137.230.170/semarchy/api/rest/admin/image-libraries/ -u semadmin:semadmin")
+		  		//sh("curl -s -k -X GET –header Content-Type: application/json’ \
+        	  		  //–header ‘Accept:application/json’  \
+		  		  //-header Authorization: Basic c2VtYWRtaW46c2VtYWRtaW4= \
+		   		  //http://83.137.230.170/semarchy/api/rest/admin/image-libraries/")
 			   }	
 		    
         }
@@ -22,7 +22,8 @@ pipeline {
             steps {
                 echo 'Getting Users..'
 		    script {
-			    readFile("${WORKSPACE}/roles.csv")
+			    def roles = readFile("${WORKSPACE}/roles.csv")
+			    echo '${WORKSPACE}'
 		
             }
         }
