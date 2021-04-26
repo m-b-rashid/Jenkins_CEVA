@@ -25,7 +25,7 @@ pipeline {
 		 steps{
 		  echo 'Getting images..' 
 			 script{
-				 def images = readFile("${WORKSPACE}/images.png")
+				 def images = readFile("${WORKSPACE}/about-dialog-logo.png")
 				 echo(images)
 			 }
 		 }	
