@@ -32,6 +32,7 @@ pipeline {
 	  }
 	    stage('Build-Release') {
 		 steps{
+		 echo 'Build Release'
 		  
 			 }
 		 	
