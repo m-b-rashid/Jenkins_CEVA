@@ -44,8 +44,9 @@ pipeline {
 	    }
 	    stage('Dev-Release') {
 		    steps {
-	 	    sh ("dev/devRelease")
-		    echo 'Relase to QA'
+		    sh("ls")
+	 	    sh ("dev/devRelease.sh")
+		    echo 'Release to QA'
 		    }
 		    
 		    
