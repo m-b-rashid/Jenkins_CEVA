@@ -6,8 +6,6 @@ pipeline {
 		steps {	
 		echo 'Checking out repo..'
 		checkout scm
-		sh("pwd")
-		sh("ls")
 		echo 'Checked out repo...'
 		
 		}
@@ -45,11 +43,8 @@ pipeline {
 	    }
 	    stage('Dev-Release') {
 		    steps {
-		    	sh("ls -a")
-			sh("pwd")
-			sh("cd")
-		    	sh("chmod +x ${WORKSPACE}/dev/devRelease.sh")
-	 	    	sh("${WORKSPACE}/dev/devRelease.sh")
+		    	sh("chmod +x ${WORKSPACE}/devRelease.sh")
+	 	    	sh("${WORKSPACE}/devRelease.sh")
 		    	echo 'Release to QA'
 		    }
 		    
