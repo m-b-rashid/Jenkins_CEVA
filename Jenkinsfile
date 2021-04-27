@@ -19,14 +19,10 @@ pipeline = {
         echo 'Testing...'
     }
     stage('Dev-Release') {
-        bat("dir")
-        sh("dir")
-        sh("ls")
-        sh("pwd")
-        echo("${WORKSPACE"}")
-        sh("chmod +x ${WORKSPACE}/devRelease.sh")
-        sh("${WORKSPACE}/devRelease.sh")
-        echo 'Release to QA'
+        // echo("${WORKSPACE"}")
+        // sh("chmod +x ${WORKSPACE}/devRelease.sh")
+        // sh("${WORKSPACE}/devRelease.sh")
+        // echo 'Release to QA'
     }
 }
 
