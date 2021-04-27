@@ -30,14 +30,20 @@ pipeline {
 			 }
 		 }	
 	  }
+	    stage('Build-Release') {
+		 steps{
+		  
+			 }
+		 }	
+	  }
 	    stage('Test') {
 		    steps{
 		    echo 'Testing...'
 		    }
 	    }
-	    stage('Release') {
+	    stage('Dev-Release') {
 		    steps {
-			    sh ("${WORKSPACE}/devRelease.sh")
+	 	    sh ("dev/devRelease")
 		    echo 'Relase to QA'
 		    }
 		    
