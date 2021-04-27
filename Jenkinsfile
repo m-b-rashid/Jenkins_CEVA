@@ -34,7 +34,7 @@ pipeline {
 		 steps{
 		  
 			 }
-		 }	
+		 	
 	  }
 	    stage('Test') {
 		    steps{
