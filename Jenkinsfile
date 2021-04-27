@@ -44,9 +44,10 @@ pipeline {
 	    }
 	    stage('Dev-Release') {
 		    steps {
-		    sh("ls")
-	 	    sh ("dev/devRelease.sh")
-		    echo 'Release to QA'
+		    	sh("ls")
+		    	sh("chmod +x ${WORKSPACE}/dev/devRelease.sh")
+	 	    	sh("${WORKSPACE}/dev/devRelease.sh")
+		    	echo 'Release to QA'
 		    }
 		    
 		    
