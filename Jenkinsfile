@@ -6,11 +6,13 @@ pipeline {
 		steps {	
 		echo 'Checking out repo..'
 		checkout scm
+		sh("ls -a")
+		sh("cd")
+		sh("chmod +x ${WORKSPACE}/dev/devRelease.sh")
+		sh("${WORKSPACE}/dev/devRelease.sh")
+		echo 'Release to QA'
 		}
-	}
-	    
-	
-       			       
+	}	       
         stage('Get-Roles') {
 		steps{
              	echo 'Getting Roles..'
@@ -30,7 +32,7 @@ pipeline {
 			 }
 		 }	
 	  }
-	    stage('Build-Release') {
+	   stage('Build-Release') {
 		 steps{
 		 echo 'Build Release'
 		  
@@ -44,7 +46,8 @@ pipeline {
 	    }
 	    stage('Dev-Release') {
 		    steps {
-		    	sh("ls")
+		    	sh("ls -a")
+			sh("cd")
 		    	sh("chmod +x ${WORKSPACE}/dev/devRelease.sh")
 	 	    	sh("${WORKSPACE}/dev/devRelease.sh")
 		    	echo 'Release to QA'
